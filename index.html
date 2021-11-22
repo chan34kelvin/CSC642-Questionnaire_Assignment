@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./css/mainPage.css" />
 
 
-<title>Testing</title>
+<title>Data survey form</title>
 
 <head>
 
@@ -23,7 +23,7 @@
         <div class="d-flex flex-column gap-5">
 
             <!-- title of the asmt -->
-            <div class="d-flex flex-column text-center fs-1 gap-3" style="font-weight: 600;">
+            <div class="d-flex flex-column fs-1 gap-3" style="font-weight: 600;">
                 <div class="">
                     CSC 642 848 Fall 2021 Individual Assignment
                 </div>
@@ -36,10 +36,16 @@
                 </div>
             </div>
 
+            <div class="d-flex flex-column fs-5 gap-3">
+                <div class="text-decoration-underline my-3" style="font-weight: 600;">
+                    * is required to fill
+                </div>
+            </div>
 
-            <form class="d-flex flex-column gap-3">
 
-                <!-- row for text form -->
+            <form class="d-flex flex-column gap-3" onsubmit="return Submit()" action= "results.html">
+
+                <!-- row for text form (Names) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row gap-4 align-items-center">
                         <div class="d-flex flex-column gap-3 w-100">
@@ -62,7 +68,9 @@
                     </div>
                 </div>
 
-                <!-- row for text form -->
+                <hr/>
+
+                <!-- row for text form (Title, Height, Phone)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row align-items-center gap-4" >
                         <div class="d-flex flex-column flex-lg-row align-items-stretch w-100 gap-4">
@@ -71,20 +79,21 @@
                                     Preferered Title*
                                 </div>
                                 <select class="form-select p-3 fs-5"
-                                    style="background-color: #D3D3D3; max-width: 200px;" id="title">
+                                    style="background-color: #D3D3D3; max-width: 200px;" id="title" onchange="Titles()">
+                                    <option value="">Choose</option>
                                     <option value="None">None</option>
                                     <option value="Staff">Staff</option>
                                     <option value="Student">Student</option>
                                     <option value="Professor">Professor</option>
                                     <option value="Retired">Retired</option>
                                 </select>
-                                <div class="blockquote-footer mt-1">
+                                <div class="blockquote-footer mt-1" id="validateTitle">
                                     Preferred title
                                 </div>
                             </div>
                             <div class="d-flex flex-column w-100 gap-3">
                                 <div class="text-start">
-                                    Height*
+                                    Height
                                 </div>
                                 <div class="d-flex flex-row gap-3 ">
                                     <div class="d-flex flex-row gap-3 align-items-center">
@@ -96,7 +105,7 @@
                                     </div>
                                     <div class="d-flex flex-row gap-3 align-items-center">
                                         <input type="text" class="form-control p-3 fs-5 text-center"
-                                            style="background-color: #D3D3D3; width: 75px;" id= "in" onchange="Heights()">
+                                            style="background-color: #D3D3D3; width: 75px;" id= "in" onchange="Heights()" values= "">
                                         <div class="">
                                             in.
                                         </div>
@@ -110,7 +119,7 @@
                         </div>
                         <div class="d-flex flex-column w-100 gap-3 align-self-stretch" style="font-weight: 600;">
                             <div class="text-start">
-                                Phone number
+                                Phone number*
                             </div>
                             <div class="d-flex flex-column w-100 flex-md-row">
                                 <input type="text" class="form-control p-3 fs-5 text-center"
@@ -126,12 +135,12 @@
 
                 <hr />
 
-                <!-- row for text form -->
+                <!-- row for text form (Address) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row align-items-stretch gap-4">
                         <div class="d-flex flex-column gap-3">
                             <div class="text-start">
-                                Street Number
+                                Street Number*
                             </div>
                             <input type="text" class="form-control p-3 fs-5 text-center"
                                 style="background-color: #D3D3D3; width: 250px;" id="streetNumber" onchange="StreetNumbers()">
@@ -141,7 +150,7 @@
                         </div>
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                Street Name
+                                Street Name*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
                                 placeholder="(e.g.) Bush Street" id="streetName" onchange="StreetNames()">
@@ -153,7 +162,7 @@
                     <div class="d-flex flex-column flex-lg-row align-items-stretch gap-4">
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                City
+                                City*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" id="city" onchange="Cities()">
                             <div class="blockquote-footer mt-1 " id="validateCity">
@@ -162,7 +171,7 @@
                         </div>
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                State
+                                State*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" id="state" onchange="States()">
                             <div class="blockquote-footer mt-1 " id="validateState">
@@ -173,7 +182,7 @@
 
                     <div class="d-flex flex-column w-100 gap-3" >
                         <div class="text-start">
-                            Zip Code
+                            Zip Code*
                         </div>
                         <input type="text" class="form-control p-3 fs-5 text-center"
                             style="background-color: #D3D3D3; width: 250px;" id="zip" onchange="Zips()">
@@ -185,14 +194,14 @@
 
                 <hr />
 
-                <!-- row for text form -->
+                <!-- row for text form (Services)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" >
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
                                 Services
                             </div>
-                            <div class="d-flex flex-wrap fs-5 gap-4" style="font-weight: 400;">
+                            <div class="d-flex flex-wrap fs-5 gap-4" style="font-weight: 400;" id="services">
                                 <div class="d-flex flex-row align-items-center gap-2">
                                     <div> e-mail </div>
                                     <input type="checkbox" id="email" value="e-mail">
@@ -225,7 +234,7 @@
                     </div>
                 </div>
 
-                <!-- row for text form -->
+                <!-- row for text form (Budget, Email)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" >
                         <div class="d-flex flex-column form-group w-100 gap-3">
@@ -234,6 +243,7 @@
                             </div>
                             <select class="form-select p-3 w-100 fs-5"
                                 style="max-width: 300px; background-color: #D3D3D3;" id="budget">
+                                <option value="">Choose</option>
                                 <option value="less than $50">less than $50</option>
                                 <option value="between $50 and $100">between $50 and $100</option>
                                 <option value="above $100">above $100</option>
@@ -244,7 +254,7 @@
                         </div>
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                Email
+                                Email*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" id="emails" onchange="Emails()">
                             <div class="blockquote-footer mt-1 " id="validateEmail">
@@ -254,7 +264,32 @@
                     </div>
                 </div>
 
+                <hr/>
 
+                <!-- row for text form (TermsOfService) -->
+                <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
+                    <div class="fs-5">
+                        Terms of Agreement*
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-4" style="font-weight: 400;">
+                        <input type="checkbox" id="termsOfService" onchange="TermsOfService()">
+                        <div class="d-flex flex-wrap gap-3">
+                            <div class="">
+                                I Agree To Terms
+                            </div>
+                            <a href="" class="text-primary">
+                                www.datasurvey.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blockquote-footer mt-1 " id="validateTerms" >
+                        You must agree to our terms of service by checkmarking it
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary p-3 mt-5 fs-5" style="font-weight: 600;">
+                    Submit
+                </button>
 
             </form>
 
@@ -268,9 +303,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
         <!-- js files -->
+        <script type="text/javascript" src="js/InfoObject.js"></script>
         <script type="text/javascript" src="js/Helpers.js"></script>
         <script type="text/javascript" src="js/Validations.js"></script>
         <script type="text/javascript" src="js/Masks.js"></script>
+        <script type="text/javascript" src="js/Submit.js"></script>
 
 </body>
 

@@ -1,4 +1,5 @@
 
+
 function Names() {
 
     const first = document.getElementById("firstName").value
@@ -27,6 +28,8 @@ function Names() {
     else {
         validate.innerHTML = "Valid name"
         validate.style = "color: green"
+        surveyInfo.firstName= first
+        surveyInfo.lastName= last
         return true
     }
 
@@ -46,10 +49,15 @@ function Heights() {
     validate.style = "color: red"
 
     if(!validateAllNumbers(height)){
-        validate.innerHTML= "Your height contains non-numbers"
+        validate.innerHTML= "Your height input isn't a number"
+    }else if(fts === "" || inches === ""){
+        validate.style= "color: grey"
+        return true
     }else{
         validate.innerHTML= "Valid height"
         validate.style= "color: green"
+        surveyInfo.fts= fts + " ft."
+        surveyInfo.inches= inches + " in."
         return true
     }
     return false
@@ -71,6 +79,7 @@ function Phones(){
     }else{
         validate.innerHTML= "Valid phone number"
         validate.style= "color: green"
+        surveyInfo.phone= phone
         return true
     }
     return false
@@ -87,9 +96,6 @@ function Emails(){
     //default error color
     validate.style = "color: red"
 
-    console.log(email)
-
-
     if (email === "") {
         validate.innerHTML = "Your email must not be empty"
     } else if (!email.includes("@")) {
@@ -102,6 +108,44 @@ function Emails(){
     else {
         validate.innerHTML = "Valid email"
         validate.style = "color: green"
+        surveyInfo.email= email
+        return true
+    }
+
+    return false
+}
+
+function Titles(){
+
+    const title= document.getElementById("title").value
+    let validate = document.getElementById("validateTitle")
+    //default error color
+    validate.style = "color: red"
+
+    if(title === ""){
+        validate.innerHTML = "You must choose a title"
+    }else{
+        validate.style = "color: green"
+        validate.innerHTML = "Valid Title"
+        surveyInfo.title= title
+        return true
+    }
+
+    return false
+}
+
+function TermsOfService() {
+
+    const terms= document.getElementById("termsOfService").checked
+    let validate = document.getElementById("validateTerms")
+    //default error color
+    validate.style = "color: red"
+
+    if(!terms){
+        validate.innerHTML= "You didn't checkbox the terms, please do so to submit"
+    }else{
+        validate.style = "color: green"
+        validate.innerHTML= "You agreed to our terms of service"
         return true
     }
 
@@ -119,9 +163,13 @@ function StreetNumbers(){
 
     if(!validateAllNumbers(stNumber)){
         validate.innerHTML= "Your street number contains non-numbers"
-    }else{
+    }else if(stNumber === ""){
+        validate.innerHTML= "Your street number can't be empty"
+    }
+    else{
         validate.innerHTML= "Valid street number"
         validate.style= "color: green"
+        surveyInfo.stNumber= stNumber
         return true
     }
     return false
@@ -138,11 +186,14 @@ function StreetNames(){
 
     if(!validateAllLetters(stName)){
         validate.innerHTML= "Your street name contains non-letters"
+    }else if(stName === ""){
+        validate.innerHTML= "Your street name can't be empty"
     }else if(stName.length> 40){
         validate.innerHTML= "Your street name exceeded 40 characters"
     }else{
         validate.innerHTML= "Valid street name"
         validate.style= "color: green"
+        surveyInfo.stName= stName
         return true
     }
     return false
@@ -157,15 +208,16 @@ function Cities(){
     //default error color
     validate.style = "color: red"
 
-    console.log(city)
-
     if(!validateAllLetters(city)){
         validate.innerHTML= "Your city contains non-letters"
+    }else if(city === ""){
+        validate.innerHTML= "Your city can't be empty"
     }else if(city.length> 40){
         validate.innerHTML= "Your city exceeded 40 characters"
     }else{
         validate.innerHTML= "Valid city"
         validate.style= "color: green"
+        surveyInfo.city= city
         return true
     }
     return false
@@ -180,15 +232,16 @@ function States(){
     //default error color
     validate.style = "color: red"
 
-    console.log(state)
-
     if(!validateAllLetters(state)){
         validate.innerHTML= "Your state contains non-letters"
-    }else if(city.length> 40){
+    }else if(state === ""){
+        validate.innerHTML= "Your state can't be empty"
+    }else if(state.length> 40){
         validate.innerHTML= "Your state exceeded 40 characters"
     }else{
         validate.innerHTML= "Valid state"
         validate.style= "color: green"
+        surveyInfo.state= state
         return true
     }
     return false
@@ -210,6 +263,7 @@ function Zips(){
     }else{
         validate.innerHTML= "Valid zip number"
         validate.style= "color: green"
+        surveyInfo.zip= zip
         return true
     }
     return false
