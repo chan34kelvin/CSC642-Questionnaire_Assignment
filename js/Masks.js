@@ -7,18 +7,15 @@ $(document).ready(function ($) {
 });
 
 $(document).ready(function ($) {
-    $("#ft").mask("AA");
+    $("#fts").mask("AA");
 });
 
 $(document).ready(function ($) {
-    $("#in").mask("AA");
+    $("#inches").mask("AA");
 });
 
 $(document).ready(function ($) {
     $("#zip").mask("AAAAA");
 });
 
-$(document).ready(function ($) {
-    $("#streetNum").mask("AAAAAAAA");
-});
 

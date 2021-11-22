@@ -98,14 +98,14 @@
                                 <div class="d-flex flex-row gap-3 ">
                                     <div class="d-flex flex-row gap-3 align-items-center">
                                         <input type="text" class="form-control p-3 fs-5 text-center"
-                                            style="background-color: #D3D3D3; width: 75px;" id= "ft" onchange="Heights()">
+                                            style="background-color: #D3D3D3; width: 75px;" id= "fts" onchange="Heights()">
                                         <div class="">
                                             ft.
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row gap-3 align-items-center">
                                         <input type="text" class="form-control p-3 fs-5 text-center"
-                                            style="background-color: #D3D3D3; width: 75px;" id= "in" onchange="Heights()" values= "">
+                                            style="background-color: #D3D3D3; width: 75px;" id= "inches" onchange="Heights()" values= "">
                                         <div class="">
                                             in.
                                         </div>
@@ -138,24 +138,14 @@
                 <!-- row for text form (Address) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
                     <div class="d-flex flex-column flex-lg-row align-items-stretch gap-4">
-                        <div class="d-flex flex-column gap-3">
-                            <div class="text-start">
-                                Street Number*
-                            </div>
-                            <input type="text" class="form-control p-3 fs-5 text-center"
-                                style="background-color: #D3D3D3; width: 250px;" id="streetNumber" onchange="StreetNumbers()">
-                            <div class="blockquote-footer mt-1 " id="validateStreetNumber">
-                                Enter your Street Number
-                            </div>
-                        </div>
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                Street Name*
+                                Address*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
-                                placeholder="(e.g.) Bush Street" id="streetName" onchange="StreetNames()">
-                            <div class="blockquote-footer mt-1 " id="validateStreetName">
-                                Enter your Street Name
+                                placeholder="(e.g.) 340 Bush Street" id="address" onchange="Address()">
+                            <div class="blockquote-footer mt-1 " id="validateAddress">
+                                Enter your Address (P.O. Box)
                             </div>
                         </div>
                     </div>
@@ -287,7 +277,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary p-3 mt-5 fs-5" style="font-weight: 600;">
+                <button type="submit" class="btn btn-primary p-3 my-5 fs-5" style="font-weight: 600;">
                     Submit
                 </button>
 

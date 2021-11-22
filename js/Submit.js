@@ -29,8 +29,7 @@ function StoreAllData(){
 
 function ValidAddress() {
     return (
-        StreetNames() &&
-        StreetNumbers() &&
+        Address() &&
         Cities() &&
         States() &&
         Zips()
@@ -38,8 +37,7 @@ function ValidAddress() {
 }
 
 function RunThruAllInputs() {
-    StreetNames()
-    StreetNumbers()
+    Address()
     Cities()
     States()
     Zips()

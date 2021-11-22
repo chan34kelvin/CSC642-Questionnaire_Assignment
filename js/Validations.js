@@ -38,8 +38,8 @@ function Names() {
 
 function Heights() {
 
-    const fts = document.getElementById("ft").value
-    const inches = document.getElementById("in").value
+    const fts = document.getElementById("fts").value
+    const inches = document.getElementById("inches").value
 
     //trim to get rid of leading and trailing white spaces that user accidentally typed
     const height= (fts+inches).trim()
@@ -152,48 +152,27 @@ function TermsOfService() {
     return false
 }
 
-//address
-function StreetNumbers(){
+function Address(){
 
-    const stNumber=  document.getElementById("streetNumber").value
+    const address= document.getElementById("address").value.trim()
 
-    let validate= document.getElementById("validateStreetNumber")
-    //default error color
-    validate.style = "color: red"
-
-    if(!validateAllNumbers(stNumber)){
-        validate.innerHTML= "Your street number contains non-numbers"
-    }else if(stNumber === ""){
-        validate.innerHTML= "Your street number can't be empty"
-    }
-    else{
-        validate.innerHTML= "Valid street number"
-        validate.style= "color: green"
-        surveyInfo.stNumber= stNumber
-        return true
-    }
-    return false
-}
-
-function StreetNames(){
-
-    const stName= document.getElementById("streetName").value.trim()
-
-    let validate= document.getElementById("validateStreetName")
+    let validate= document.getElementById("validateAddress")
 
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllLetters(stName)){
-        validate.innerHTML= "Your street name contains non-letters"
-    }else if(stName === ""){
-        validate.innerHTML= "Your street name can't be empty"
-    }else if(stName.length> 40){
-        validate.innerHTML= "Your street name exceeded 40 characters"
+    if(!validateBoth(address)){
+        validate.innerHTML= "Your address contains invalid characters"
+    }else if(!validateIfMix(address)){
+        validate.innerHTML= "Your address should be similiar to (e.g. 340 bayshore hwy)" 
+    }else if(address === ""){
+        validate.innerHTML= "Your address can't be empty"
+    }else if(address.length> 40){
+        validate.innerHTML= "Your address exceeded 40 characters"
     }else{
         validate.innerHTML= "Valid street name"
         validate.style= "color: green"
-        surveyInfo.stName= stName
+        surveyInfo.address= address
         return true
     }
     return false
