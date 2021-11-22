@@ -9,6 +9,7 @@
 <!-- custom css -->
 <link rel="stylesheet" href="./css/mainPage.css" />
 
+
 <title>Testing</title>
 
 <head>
@@ -29,7 +30,7 @@
                 <div class="">
                     By: Kelvin Ching Kiu Chan
                 </div>
-                <hr />
+                <hr/>
                 <div class="text-dark">
                     Data survey form
                 </div>
@@ -37,9 +38,10 @@
 
 
             <div class="d-flex flex-column gap-3">
+
                 <!-- row for text form -->
                 <div class="d-flex flex-column fs-5 gap-3">
-                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" style="font-weight: 600;">
+                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-center" style="font-weight: 600;">
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
                                 First Name*
@@ -60,101 +62,126 @@
 
                 <!-- row for text form -->
                 <div class="d-flex flex-column fs-5 gap-3">
-                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" style="font-weight: 600;">
-                        <div class="d-flex flex-column form-group gap-3 w-100">
-                            <div class="text-start">
-                                Preferred title*
+                    <div class="d-flex flex-column flex-lg-row align-items-center gap-4" style="font-weight: 600;">
+                        <div class="d-flex flex-column flex-lg-row align-items-center w-100 gap-4">
+                            <div class="d-flex flex-column w-100 form-group gap-3" style="min-width: 200px;">
+                                <div class="text-start">
+                                    Preferered Title*
+                                </div>
+                                <select class="form-select p-3 fs-5"
+                                    style="background-color: #D3D3D3; max-width: 200px;">
+                                    <option value="">None</option>
+                                    <option value="">Staff</option>
+                                    <option value="">Student</option>
+                                    <option value="">Professor</option>
+                                    <option value="">Retired</option>
+                                </select>
+                                <div class="blockquote-footer mt-1" style="font-weight: 600;">
+                                    Preferred title
+                                </div>
                             </div>
-                            <select class="form-select p-3 fs-5 w-100" style="background-color: #D3D3D3; max-width: 200px;">
-                                <option value="">None</option>
-                                <option value="">Staff</option>
-                                <option value="">Student</option>
-                                <option value="">Professor</option>
-                                <option value="">Retired</option>
-                            </select>
-                            <div class="blockquote-footer mt-1" style="font-weight: 600;">
-                                Choose your preferred title
+                            <div class="d-flex flex-column w-100 gap-3">
+                                <div class="text-start">
+                                    Height*
+                                </div>
+                                <div class="d-flex flex-row gap-3 ">
+                                    <div class="d-flex flex-row gap-3 align-items-center">
+                                        <input type="text" class="form-control p-3 fs-5 text-center"
+                                            style="background-color: #D3D3D3; width: 50px;">
+                                        <div class="">
+                                            feet
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-row gap-3 align-items-center">
+                                        <input type="text" class="form-control p-3 fs-5 text-center"
+                                            style="background-color: #D3D3D3; width: 50px;">
+                                        <div class="">
+                                            inches
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blockquote-footer mt-1 " style="font-weight: 600;">
+                                    Enter your height
+                                </div>
                             </div>
+
                         </div>
                         <div class="d-flex flex-column w-100 gap-3">
                             <div class="text-start">
-                                Height* (In Ft' and inches'')
+                                Phone number
                             </div>
-                            <div class="d-flex flex-row w-100 gap-3">
-                                <div class="d-flex flex-row gap-3 w-100 align-items-center">
-                                    <input type="text" class="form-control w-50 p-3 fs-5 text-center"
-                                        style="background-color: #D3D3D3;">
-                                    <div class="w-75">
-                                        feet
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row gap-3 w-100 align-items-center">
-                                    <input type="text" class="form-control w-50 p-3 fs-5 text-center"
-                                        style="background-color: #D3D3D3;">
-                                    <div class="w-75">
-                                        inches
-                                    </div>
-                                </div>
+                            <div class="d-flex flex-column flex-md-row">
+                                <input type="text" class="form-control p-3 fs-5 w-100 text-center"
+                                    style="background-color: #D3D3D3; width: 300px;" id="test"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+                                <div class="w-100"></div>
                             </div>
                             <div class="blockquote-footer mt-1 " style="font-weight: 600;">
-                                Enter your height
+                                Enter your phone number
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- row for text form -->
-                <div class="d-flex flex-column fs-5 gap-3">
-                    <div class="d-flex flex-column flex-lg-row w-100 gap-4 align-items-stretch" style="font-weight: 600;">
-                        <div class="d-flex flex-column w-100 gap-3">
-                            <div class="text-start">
-                                Phone number
-                            </div>
-                            <div class="d-flex flex-wrap gap-3 w-100 align-items-center">
-                                <input type="text" class="form-control p-3 fs-5 text-center"
-                                    style="background-color: #D3D3D3; width: 100px;">
-                                <div class="justify-content-center">
-                                    -
-                                </div>
-                                <input type="text" class="form-control p-3 fs-5 text-center"
-                                    style="background-color: #D3D3D3; width: 100px;">
-                                <div class="">
-                                    -
-                                </div>
-                                <input type="text" class="form-control p-3 fs-5 text-center"
-                                    style="background-color: #D3D3D3; width: 200px;">
-                            </div>
-                            <div class="blockquote-footer mt-1 " style="font-weight: 600;">
-                                Enter your phone number (3, 3, 4, total of 10 digits)
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <hr/>
 
                 <!-- row for text form -->
                 <div class="d-flex flex-column fs-5 gap-3">
                     <div class="d-flex flex-column flex-lg-row align-items-stretch gap-4" style="font-weight: 600;">
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                Address
+                                City
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;">
                             <div class="blockquote-footer mt-1 " style="font-weight: 600;">
-                                Enter your address
+                                Enter your City
                             </div>
                         </div>
-                        <div class="d-flex flex-column w-50 gap-3">
+                        <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
-                                Zip Code
+                                State
                             </div>
-                            <input type="text" class="form-control p-3 fs-5 text-center"
-                                style="background-color: #D3D3D3;">
+                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;">
                             <div class="blockquote-footer mt-1 " style="font-weight: 600;">
-                                Enter your 5 digit zip code (e.g 94122)
+                                Enter your State
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex flex-column flex-lg-row align-items-stretch gap-4" style="font-weight: 600;">
+                        <div class="d-flex flex-column gap-3">
+                            <div class="text-start">
+                                Street Number
+                            </div>
+                            <input type="text" class="form-control p-3 fs-5 text-center"
+                                style="background-color: #D3D3D3; width: 250px;">
+                            <div class="blockquote-footer mt-1 " style="font-weight: 600;">
+                                Enter your Street Number
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-3 w-100">
+                            <div class="text-start">
+                                Street Name
+                            </div>
+                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" placeholder="Bush Street">
+                            <div class="blockquote-footer mt-1 " style="font-weight: 600;">
+                                Enter your Street Name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column w-100 gap-3" style="font-weight: 600;">
+                        <div class="text-start">
+                            Zip Code
+                        </div>
+                        <input type="text" class="form-control p-3 fs-5 text-center"
+                            style="background-color: #D3D3D3; width: 250px;">
+                        <div class="blockquote-footer mt-1 " style="font-weight: 600;">
+                            Enter your 5 digit zip code (e.g 94122)
+                        </div>
+                    </div>
                 </div>
+
+                <hr/>
 
                 <!-- row for text form -->
                 <div class="d-flex flex-column fs-5 gap-3">
@@ -164,27 +191,27 @@
                                 Services
                             </div>
                             <div class="d-flex flex-wrap fs-5 gap-4" style="font-weight: 400;">
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row align-items-center gap-2">
                                     <div> e-mail </div>
                                     <input type="checkbox" id="email" value="e-mail">
                                 </div>
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row align-items-center gap-2">
                                     <div> phone </div>
                                     <input type="checkbox" id="phone" value="phone">
                                 </div>
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row align-items-center gap-2">
                                     <div> Facebook </div>
                                     <input type="checkbox" id="facebook" value="Facebook">
                                 </div>
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row  align-items-center gap-2">
                                     <div> Twitter </div>
                                     <input type="checkbox" id="twitter" value="Twitter">
                                 </div>
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row align-items-center gap-2">
                                     <div> Surface mail </div>
                                     <input type="checkbox" id="surfaceMail" value="Surface mail">
                                 </div>
-                                <div class="d-flex flex-row gap-2">
+                                <div class="d-flex flex-row align-items-center gap-2">
                                     <div> Personal Visit </div>
                                     <input type="checkbox" id="personalVisit" value="Personal Visit">
                                 </div>
@@ -203,7 +230,8 @@
                             <div class="text-start">
                                 Monthly budget for services
                             </div>
-                            <select class="form-select p-3 w-100 fs-5" style="max-width: 300px; background-color: #D3D3D3;">
+                            <select class="form-select p-3 w-100 fs-5"
+                                style="max-width: 300px; background-color: #D3D3D3;">
                                 <option value="less than $50">less than $50</option>
                                 <option value="between $50 and $100">between $50 and $100</option>
                                 <option value="above $100">above $100</option>
@@ -219,20 +247,29 @@
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;">
                             <div class="blockquote-footer mt-1 " style="font-weight: 600;">
                                 Enter your email address for more promotions
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
 
-
-
         </div>
+        <!-- bootstrap scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <script>
+            $(document).ready(function ($) {
+                $("#test").mask("000 000 0000");
+            });
+            console.log(document.getElementById("test").value)
+        </script>
 
-    </div>
-    <!-- bootstrap scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
