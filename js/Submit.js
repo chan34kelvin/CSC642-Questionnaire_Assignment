@@ -23,7 +23,7 @@ function Submit() {
     return false
 }
 
-function StoreAllData(){
+function StoreAllData() {
     localStorage.setItem("surveyObject", surveyInfo)
 }
 
@@ -41,10 +41,10 @@ function RunThruAllInputs() {
     Cities()
     States()
     Zips()
-    Names() 
+    Names()
     Heights()
-    Emails() 
-    Phones() 
+    Emails()
+    Phones()
     TermsOfService()
     Titles()
 }
@@ -56,8 +56,12 @@ function getRemainingValues() {
     for (let i = 0; i < services.children.length; i += 1) {
         let current = services.children[i].children[1]
         if (current.checked) {
-            result += current.value + " "
+            result += current.value + " , "
         }
+    }
+
+    if (result.includes(",")) {
+        result = result.substr(0, result.length - 2)
     }
 
     surveyInfo.services = result

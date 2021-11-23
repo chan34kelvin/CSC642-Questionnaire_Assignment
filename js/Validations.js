@@ -126,7 +126,7 @@ function Titles(){
         validate.innerHTML = "You must choose a title"
     }else{
         validate.style = "color: green"
-        validate.innerHTML = "Valid Title"
+        validate.innerHTML = "Valid title"
         surveyInfo.title= title
         return true
     }
@@ -151,6 +151,9 @@ function TermsOfService() {
 
     return false
 }
+
+
+//address validations
 
 function Address(){
 
@@ -217,6 +220,8 @@ function States(){
         validate.innerHTML= "Your state can't be empty"
     }else if(state.length> 40){
         validate.innerHTML= "Your state exceeded 40 characters"
+    }else if(!validateStates(state)){
+        validate.innerHTML= "This state doesn't exist in U.S"
     }else{
         validate.innerHTML= "Valid state"
         validate.style= "color: green"
@@ -238,9 +243,9 @@ function Zips(){
     if(!validateAllNumbers(zip)){
         validate.innerHTML= "Your zip contains non-numbers"
     }else if(zip.length != zipLimit){
-        validate.innerHTML= `Your zip number isn't ${zipLimit} digits`
+        validate.innerHTML= `Your zip code isn't ${zipLimit} digits`
     }else{
-        validate.innerHTML= "Valid zip number"
+        validate.innerHTML= "Valid zip code"
         validate.style= "color: green"
         surveyInfo.zip= zip
         return true

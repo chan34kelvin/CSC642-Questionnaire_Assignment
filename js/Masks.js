@@ -7,15 +7,12 @@ $(document).ready(function ($) {
 });
 
 $(document).ready(function ($) {
-    $("#fts").mask("AA");
+    $("#fts").mask("#");
 });
 
 $(document).ready(function ($) {
-    $("#inches").mask("AA");
+    $("#inches").mask("#");
 });
 
-$(document).ready(function ($) {
-    $("#zip").mask("AAAAA");
-});
 
 

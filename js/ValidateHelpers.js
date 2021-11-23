@@ -55,3 +55,14 @@ function validateIfMix(text){
     }
     return testNum && testLetter
 }
+
+function validateStates(state){
+
+    for(let i=0; i< statesOptions.length; i+=1){
+        if(state.toLowerCase() === statesOptions[i].toLowerCase()){
+            return true
+        }
+    }
+
+    return false
+}
