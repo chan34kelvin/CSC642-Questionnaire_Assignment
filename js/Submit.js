@@ -1,31 +1,34 @@
+
 function Submit() {
 
-    const ifRequiredFit = (
-        ValidAddress() &&
-        Names() &&
-        Emails() &&
-        Phones() &&
-        TermsOfService() &&
-        Heights() &&
+    const required= [
+        ValidAddress(),
+        Names(),
+        Emails(),
+        Phones(),
+        TermsOfService(),
+        Heights(),
         Titles()
-    )
+    ]
 
-    RunThruAllInputs()
-
-    if (ifRequiredFit) {
+    if (RunThruAllRequired(required)) {
         getRemainingValues()
         sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
-        // document.getElementById("formSubmit").submit()
         return true
     } else {
-        alert("Checkout any reds and fix them correctly to submit")
+        alert("Checkout and fix the red errors correctly to submit")
     }
 
     return false
 }
 
-function StoreAllData() {
-    localStorage.setItem("surveyObject", surveyInfo)
+function RunThruAllRequired(required){
+
+    let result= true
+    for(let i=0; i< required.length; i+=1){
+        result= result && required[i]
+    }
+    return result
 }
 
 function ValidAddress() {
@@ -61,6 +64,7 @@ function getRemainingValues() {
         }
     }
 
+    //remove the tail ,
     if (result.includes(",")) {
         result = result.substr(0, result.length - 2)
     }

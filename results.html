@@ -8,22 +8,10 @@
 
 
 <!-- custom css -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
-
 <link rel="stylesheet" href="./css/mainPage.css" />
 <title>Data survey results</title>
 
 <head>
-    <style type="text/css">
-        /* Set the size of the div element that contains the map */
-        #map {
-            height: 100%;
-            /* The height is 400 pixels */
-            width: 100%;
-            /* The width is the width of the web page */
-        }
-    </style>
 </head>
 
 <body style="background-color: #D3D3D3;">
@@ -158,7 +146,7 @@
                 </div>
 
                 <div class="ratio ratio-16x9" style="max-height: 400px;">
-                    <div id="map"></div>
+                    <div id="map" style="height: 100%; width: 100%;"></div>
                 </div>
 
                 <hr />
@@ -209,6 +197,9 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD83drqxn_tmCcwf8NB1_vNwed9BRkU1VE&callback=initMap&libraries=&v=weekly"
             async></script>
 
+        <!-- axios to get and post request to google -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+
 
         <!-- bootstrap scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -217,36 +208,6 @@
 
         <!-- js files -->
         <script type="text/javascript" src="js/ResultsDisplay.js"></script>
-        <script>
-            DisplayResults()
-        </script>
-        <script>
-
-            function initMap() {
-                // The location of Uluru
-                const address= document.getElementById("address").innerHTML + " " + document.getElementById("city").innerHTML+ " " + document.getElementById("state").innerHTML 
-                console.log(address)
-                axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
-                    params: {
-                        address: address,
-                        key: "AIzaSyD83drqxn_tmCcwf8NB1_vNwed9BRkU1VE"
-                    }
-                }).then(function (response) {
-                    console.log(response.data.results[0].geometry.location)
-                    const location = response.data.results[0].geometry.location
-                    // The map, centered at Uluru
-                    const map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 15,
-                        center: location,
-                    });
-                    // The marker, positioned at Uluru
-                    const marker = new google.maps.Marker({
-                        position: location,
-                        map: map,
-                    });
-                })
-            }
-        </script>
 
 </body>
 

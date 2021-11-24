@@ -29,6 +29,7 @@ function validateEmails(text){
     return true
 }
 
+//letters and numbers
 function validateBoth(text){
     for(let i=0; i< text.length; i+=1){
         let character= text[i]
@@ -57,12 +58,10 @@ function validateIfMix(text){
 }
 
 function validateStates(state){
-
     for(let i=0; i< statesOptions.length; i+=1){
         if(state.toLowerCase() === statesOptions[i].toLowerCase()){
             return true
         }
     }
-
     return false
 }

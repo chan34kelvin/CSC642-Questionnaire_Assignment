@@ -1,5 +1,11 @@
+//captcha to enable the button for submission
+function EnableSubmit() {
+    let button = document.getElementById("button")
+    button.removeAttribute("disabled")
+    document.getElementById("validateButton").innerHTML= ""
+}
 
-
+//validations and logging data
 function Names() {
 
     const first = document.getElementById("firstName").value
