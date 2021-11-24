@@ -2,7 +2,7 @@
 function EnableSubmit() {
     let button = document.getElementById("button")
     button.removeAttribute("disabled")
-    document.getElementById("validateButton").innerHTML= "Verified"
+    document.getElementById("validateButton").innerHTML= "Verified by Captcha"
     document.getElementById("validateButton").style= "color: green"
 }
 
