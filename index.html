@@ -10,7 +10,11 @@
 <link rel="stylesheet" href="./css/mainPage.css" />
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+<script>
+    function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+    }
+</script>
 
 <title>Data survey form</title>
 
@@ -276,10 +280,11 @@
                     </div>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" id="test"></div>
+                <!-- <div class="g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" id="test"></div> -->
 
 
-                <button type="submit" class="btn btn-primary p-3 my-5 fs-5" style="font-weight: 600;">
+                <button type="submit" class="btn btn-primary p-3 my-5 fs-5 g-recaptcha" data-callback='onSubmit'
+                    data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" style="font-weight: 600;">
                     Submit
                 </button>
 
@@ -295,9 +300,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
         <!-- js files -->
-        <script>
-            console.log(document.getElementById("test"))
-        </script>
         <script type="text/javascript" src="js/InfoObjects.js"></script>
         <script type="text/javascript" src="js/ValidateHelpers.js"></script>
         <script type="text/javascript" src="js/Validations.js"></script>
