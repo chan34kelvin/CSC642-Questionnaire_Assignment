@@ -1,5 +1,7 @@
 function Submit() {
 
+    console.log("testIfLoads")
+
     try {
         const ifRequiredFit = (
             ValidAddress() &&
