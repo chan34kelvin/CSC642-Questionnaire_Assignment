@@ -16,6 +16,8 @@ function Submit() {
         sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
         return true
     } else {
+        document.getElementById("validateButton").style= "color: red"
+        document.getElementById("validateButton").innerHTML= "Checkout and fix the red errors correctly to submit"
         alert("Checkout and fix the red errors correctly to submit")
     }
 
