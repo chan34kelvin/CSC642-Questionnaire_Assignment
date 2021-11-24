@@ -19,7 +19,6 @@ function Submit() {
             getRemainingValues()
             sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
             document.getElementById("formSubmit").submit()
-            return true
         } else {
             alert("Checkout any reds and fix them correctly to submit")
         }

@@ -44,7 +44,7 @@
             </div>
 
             <!-- onsubmit="return Submit()" -->
-            <form class="d-flex flex-column gap-3"  action="results.html" id="formSubmit">
+            <form class="d-flex flex-column gap-3" onsubmit="Submit()" action="results.html" id="formSubmit">
 
                 <!-- row for text form (Names) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
@@ -278,7 +278,8 @@
                 <!-- <div class="g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" id="test"></div> -->
 
 
-                <button type="submit" class="btn btn-primary p-3 my-5 fs-5 g-recaptcha" data-callback='Submit'
+                <!-- data-callback='Submit'  g-recaptcha -->
+                <button type="submit" class="btn btn-primary p-3 my-5 fs-5"
                     data-sitekey="6Le7eFYdAAAAALhpH4PMIZZq34X4fs7QK9glCNPw" style="font-weight: 600;">
                     Submit
                 </button>
