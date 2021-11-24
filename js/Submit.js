@@ -24,7 +24,6 @@ function Submit() {
     }catch(err){
         console.log(err)
     }
-    return false
 }
 
 function StoreAllData() {
