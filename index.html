@@ -44,7 +44,7 @@
             </div>
 
             <!-- onsubmit="return Submit()" -->
-            <form class="d-flex flex-column gap-3" onsubmit="Submit()" action="results.html" id="formSubmit">
+            <form class="d-flex flex-column gap-3" onsubmit="return Submit()" action="results.html" id="formSubmit">
 
                 <!-- row for text form (Names) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
@@ -277,10 +277,11 @@
 
                 <!-- <div class="g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" id="test"></div> -->
 
+                <div class= "g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX" data-callback= "test"></div>
 
                 <!-- data-callback='Submit'  g-recaptcha -->
                 <button type="submit" class="btn btn-primary p-3 my-5 fs-5"
-                    data-sitekey="6Le7eFYdAAAAALhpH4PMIZZq34X4fs7QK9glCNPw" style="font-weight: 600;">
+                    style="font-weight: 600;" id="button" disabled>
                     Submit
                 </button>
 
@@ -304,6 +305,13 @@
         <script type="text/javascript" src="js/Validations.js"></script>
         <script type="text/javascript" src="js/Masks.js"></script>
         <script type="text/javascript" src="js/InitOptions.js"></script>
+
+        <script>
+            function test(){
+                let test1= document.getElementById("button")
+                test1.removeAttribute("disabled")
+            }
+        </script>
 
 </body>
 

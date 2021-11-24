@@ -1,30 +1,27 @@
 function Submit() {
 
-    console.log("testIfLoads")
+    const ifRequiredFit = (
+        ValidAddress() &&
+        Names() &&
+        Emails() &&
+        Phones() &&
+        TermsOfService() &&
+        Heights() &&
+        Titles()
+    )
 
-    try {
-        const ifRequiredFit = (
-            ValidAddress() &&
-            Names() &&
-            Emails() &&
-            Phones() &&
-            TermsOfService() &&
-            Heights() &&
-            Titles()
-        )
+    RunThruAllInputs()
 
-        RunThruAllInputs()
-
-        if (ifRequiredFit) {
-            getRemainingValues()
-            sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
-            document.getElementById("formSubmit").submit()
-        } else {
-            alert("Checkout any reds and fix them correctly to submit")
-        }
-    }catch(err){
-        console.log(err)
+    if (ifRequiredFit) {
+        getRemainingValues()
+        sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
+        // document.getElementById("formSubmit").submit()
+        return true
+    } else {
+        alert("Checkout any reds and fix them correctly to submit")
     }
+
+    return false
 }
 
 function StoreAllData() {
