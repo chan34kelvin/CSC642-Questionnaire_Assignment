@@ -164,12 +164,12 @@ function Address(){
     //default error color
     validate.style = "color: red"
 
-    if(!validateBoth(address)){
+    if(address === ""){
+        validate.innerHTML= "Your address can't be empty"
+    }else if(!validateBoth(address)){
         validate.innerHTML= "Your address contains invalid characters"
     }else if(!validateIfMix(address)){
         validate.innerHTML= "Your address should be similiar to (e.g. 340 bayshore hwy)" 
-    }else if(address === ""){
-        validate.innerHTML= "Your address can't be empty"
     }else if(address.length> 40){
         validate.innerHTML= "Your address exceeded 40 characters"
     }else{

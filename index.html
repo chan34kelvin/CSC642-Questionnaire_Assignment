@@ -9,6 +9,9 @@
 <!-- custom css -->
 <link rel="stylesheet" href="./css/mainPage.css" />
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 <title>Data survey form</title>
 
 <head>
@@ -42,7 +45,7 @@
             </div>
 
 
-            <form class="d-flex flex-column gap-3" onsubmit="return Submit()" action= "results.html">
+            <form class="d-flex flex-column gap-3" onsubmit="return Submit()" action="results.html">
 
                 <!-- row for text form (Names) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
@@ -67,11 +70,11 @@
                     </div>
                 </div>
 
-                <hr/>
+                <hr />
 
                 <!-- row for text form (Title, Height, Phone)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
-                    <div class="d-flex flex-column flex-lg-row align-items-center gap-4" >
+                    <div class="d-flex flex-column flex-lg-row align-items-center gap-4">
                         <div class="d-flex flex-column flex-lg-row align-items-stretch w-100 gap-4">
                             <div class="d-flex flex-column w-100 form-group gap-3" style="min-width: 200px;">
                                 <div class="text-start">
@@ -91,20 +94,22 @@
                                 <div class="d-flex flex-row gap-3 ">
                                     <div class="d-flex flex-row gap-3 align-items-center">
                                         <input type="text" class="form-control p-3 fs-5 text-center" maxlength="2"
-                                            style="background-color: #D3D3D3; width: 75px;" id= "fts" onchange="Heights()">
+                                            style="background-color: #D3D3D3; width: 75px;" id="fts"
+                                            onchange="Heights()">
                                         <div class="">
                                             ft.
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row gap-3 align-items-center">
                                         <input type="text" class="form-control p-3 fs-5 text-center" maxlength="2"
-                                            style="background-color: #D3D3D3; width: 75px;" id= "inches" onchange="Heights()" values= "">
+                                            style="background-color: #D3D3D3; width: 75px;" id="inches"
+                                            onchange="Heights()" values="">
                                         <div class="">
                                             in.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="blockquote-footer mt-1 " id= "validateHeight">
+                                <div class="blockquote-footer mt-1 " id="validateHeight">
                                     Enter your height
                                 </div>
                             </div>
@@ -116,8 +121,7 @@
                             </div>
                             <div class="d-flex flex-column w-100 flex-md-row">
                                 <input type="text" class="form-control p-3 fs-5 text-center"
-                                    style="background-color: #D3D3D3; width: 300px;" id="phone"
-                                    onchange="Phones()">
+                                    style="background-color: #D3D3D3; width: 300px;" id="phone" onchange="Phones()">
                             </div>
                             <div class="blockquote-footer mt-1 " id="validatePhone">
                                 Enter your phone number
@@ -147,7 +151,8 @@
                             <div class="text-start">
                                 City*
                             </div>
-                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" id="city" onchange="Cities()">
+                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
+                                id="city" onchange="Cities()">
                             <div class="blockquote-footer mt-1 " id="validateCity">
                                 Enter your City
                             </div>
@@ -156,24 +161,24 @@
                             <div class="text-start">
                                 State*
                             </div>
-                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" 
-                                   list="states" id="state" onchange="States()">
-                            <datalist id= "states">
+                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
+                                list="states" id="state" onchange="States()">
+                            <datalist id="states">
                             </datalist>
                             <div class="blockquote-footer mt-1 " id="validateState">
-                                Enter your State
+                                Choose your State by typing
                             </div>
                         </div>
                     </div>
 
-                    <div class="d-flex flex-column w-100 gap-3" >
+                    <div class="d-flex flex-column w-100 gap-3">
                         <div class="text-start">
                             Zip Code*
                         </div>
                         <input type="text" class="form-control p-3 fs-5 text-center" maxlength="5"
                             style="background-color: #D3D3D3; width: 200px;" id="zip" onchange="Zips()">
-                        <div class="blockquote-footer mt-1 " id="validateZip" >
-                            Enter your 5 digit zip code (e.g 94122)
+                        <div class="blockquote-footer mt-1 " id="validateZip">
+                            Enter your 5 digit zip code (e.g. 94122)
                         </div>
                     </div>
                 </div>
@@ -182,7 +187,7 @@
 
                 <!-- row for text form (Services)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
-                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" >
+                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch">
                         <div class="d-flex flex-column gap-3 w-100">
                             <div class="text-start">
                                 Services
@@ -213,7 +218,7 @@
                                     <input type="checkbox" id="personalVisit" value="Personal Visit">
                                 </div>
                             </div>
-                            <div class="blockquote-footer mt-1 " >
+                            <div class="blockquote-footer mt-1 ">
                                 Checkmark all services you want or use
                             </div>
                         </div>
@@ -222,16 +227,16 @@
 
                 <!-- row for text form (Budget, Email)-->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
-                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch" >
+                    <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch">
                         <div class="d-flex flex-column form-group w-100 gap-3">
                             <div class="text-start">
                                 Monthly budget for services
                             </div>
                             <select class="form-select p-3 w-100 fs-5"
                                 style="max-width: 300px; background-color: #D3D3D3;" id="budget">
-                                
+
                             </select>
-                            <div class="blockquote-footer mt-1" >
+                            <div class="blockquote-footer mt-1">
                                 Choose your Monthly budget
                             </div>
                         </div>
@@ -239,7 +244,8 @@
                             <div class="text-start">
                                 Email*
                             </div>
-                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;" id="emails" onchange="Emails()">
+                            <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
+                                id="emails" onchange="Emails()">
                             <div class="blockquote-footer mt-1 " id="validateEmail">
                                 Enter your email address for more promotions
                             </div>
@@ -247,7 +253,7 @@
                     </div>
                 </div>
 
-                <hr/>
+                <hr />
 
                 <!-- row for text form (TermsOfService) -->
                 <div class="d-flex flex-column fs-5 gap-3" style="font-weight: 600;">
@@ -265,10 +271,13 @@
                             </a>
                         </div>
                     </div>
-                    <div class="blockquote-footer mt-1 " id="validateTerms" >
+                    <div class="blockquote-footer mt-1 " id="validateTerms">
                         You must agree to our terms of service by checkmarking it
                     </div>
                 </div>
+
+                <div class="g-recaptcha" data-sitekey="6LdcbFYdAAAAAOH8LFb5MBS_Gj0GIVLyLlWeSNSX"></div>
+
 
                 <button type="submit" class="btn btn-primary p-3 my-5 fs-5" style="font-weight: 600;">
                     Submit
