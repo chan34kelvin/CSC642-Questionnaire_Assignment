@@ -2,7 +2,10 @@
 function Submit() {
 
     const required= [
-        ValidAddress(),
+        Address(),
+        Cities(),
+        States(),
+        Zips(),
         Names(),
         Emails(),
         Phones(),
@@ -11,13 +14,15 @@ function Submit() {
         Titles()
     ]
 
-    if (RunThruAllRequired(required)) {
+    const numberOfErrs= RunThruAllRequired(required)
+
+    if (numberOfErrs === 0) {
         getRemainingValues()
         sessionStorage.setItem("surveyObject", JSON.stringify(surveyInfo))
         return true
     } else {
         document.getElementById("validateButton").style= "color: red"
-        document.getElementById("validateButton").innerHTML= "Checkout and fix the red errors correctly to submit"
+        document.getElementById("validateButton").innerHTML= `Checkout and fix ${numberOfErrs} errors correctly to submit`
         alert("Checkout and fix the red errors correctly to submit")
     }
 
@@ -26,34 +31,15 @@ function Submit() {
 
 function RunThruAllRequired(required){
 
-    let result= true
+    let numberOfErrs= 0
     for(let i=0; i< required.length; i+=1){
-        result= result && required[i]
+        if(!required[i]){
+            numberOfErrs+= 1
+        }
     }
-    return result
+    return numberOfErrs
 }
 
-function ValidAddress() {
-    return (
-        Address() &&
-        Cities() &&
-        States() &&
-        Zips()
-    )
-}
-
-function RunThruAllInputs() {
-    Address()
-    Cities()
-    States()
-    Zips()
-    Names()
-    Heights()
-    Emails()
-    Phones()
-    TermsOfService()
-    Titles()
-}
 
 function getRemainingValues() {
 
