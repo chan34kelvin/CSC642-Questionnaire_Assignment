@@ -2,8 +2,8 @@
 function EnableSubmit() {
     let button = document.getElementById("button")
     button.removeAttribute("disabled")
-    document.getElementById("validateButton").innerHTML= "Verified by Captcha"
-    document.getElementById("validateButton").style= "color: green"
+    document.getElementById("validateButton").innerHTML = "Verified by Captcha"
+    document.getElementById("validateButton").style = "color: green"
 }
 
 //validations and logging data
@@ -35,8 +35,8 @@ function Names() {
     else {
         validate.innerHTML = "Valid name"
         validate.style = "color: green"
-        surveyInfo.firstName= first
-        surveyInfo.lastName= last
+        surveyInfo.firstName = first
+        surveyInfo.lastName = last
         return true
     }
 
@@ -49,53 +49,62 @@ function Heights() {
     const inches = document.getElementById("inches").value
 
     //trim to get rid of leading and trailing white spaces that user accidentally typed
-    const height= (fts+inches).trim()
+    const height = (fts + inches).trim()
 
     let validate = document.getElementById("validateHeight")
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllNumbers(height)){
-        validate.innerHTML= "Your height input isn't a number"
-    }else if(fts === "" || inches === ""){
-        validate.style= "color: grey"
-        validate.innerHTML= "Enter your height"
-        surveyInfo.fts= fts + " ft."
-        surveyInfo.inches= inches + " in."
+    if (!validateAllNumbers(height)) {
+        validate.innerHTML = "Your height input isn't a number"
+    } else if (fts === "" || inches === "") {
+        validate.style = "color: grey"
+        validate.innerHTML = "Enter your height"
+
+        if (fts.length > 1) {
+            surveyInfo.fts = fts + " ft."
+            surveyInfo.inches ="0 in."
+        } else if (inches.length > 1) {
+            surveyInfo.fts = "0 ft."
+            surveyInfo.inches = inches + " in."
+        } else {
+            surveyInfo.fts = fts
+            surveyInfo.inches = inches
+        }
         return true
-    }else{
-        validate.innerHTML= "Valid height"
-        validate.style= "color: green"
-        surveyInfo.fts= fts + " ft."
-        surveyInfo.inches= inches + " in."
+    } else {
+        validate.innerHTML = "Valid height"
+        validate.style = "color: green"
+        surveyInfo.fts = fts + " ft."
+        surveyInfo.inches = inches + " in."
         return true
     }
     return false
 }
 
-function Phones(){
+function Phones() {
 
-    const phone=  document.getElementById("phone").value
-    const phoneLimit= 10 + 2 //2 for spaces
+    const phone = document.getElementById("phone").value
+    const phoneLimit = 10 + 2 //2 for spaces
 
-    let validate= document.getElementById("validatePhone")
+    let validate = document.getElementById("validatePhone")
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllNumbers(phone)){
-        validate.innerHTML= "Your phone contains non-numbers"
-    }else if(phone.length != phoneLimit){
-        validate.innerHTML= `Your phone number isn't ${phoneLimit-2} digits`
-    }else{
-        validate.innerHTML= "Valid phone number"
-        validate.style= "color: green"
-        surveyInfo.phone= phone
+    if (!validateAllNumbers(phone)) {
+        validate.innerHTML = "Your phone contains non-numbers"
+    } else if (phone.length != phoneLimit) {
+        validate.innerHTML = `Your phone number isn't ${phoneLimit - 2} digits`
+    } else {
+        validate.innerHTML = "Valid phone number"
+        validate.style = "color: green"
+        surveyInfo.phone = phone
         return true
     }
     return false
 }
 
-function Emails(){
+function Emails() {
 
     //trim to get rid of leading and trailing white spaces that user accidentally typed
     const email = document.getElementById("emails").value.trim()
@@ -118,26 +127,26 @@ function Emails(){
     else {
         validate.innerHTML = "Valid email"
         validate.style = "color: green"
-        surveyInfo.email= email
+        surveyInfo.email = email
         return true
     }
 
     return false
 }
 
-function Titles(){
+function Titles() {
 
-    const title= document.getElementById("title").value
+    const title = document.getElementById("title").value
     let validate = document.getElementById("validateTitle")
     //default error color
     validate.style = "color: red"
 
-    if(title === ""){
+    if (title === "") {
         validate.innerHTML = "You must choose a title"
-    }else{
+    } else {
         validate.style = "color: green"
         validate.innerHTML = "Valid title"
-        surveyInfo.title= title
+        surveyInfo.title = title
         return true
     }
 
@@ -146,16 +155,16 @@ function Titles(){
 
 function TermsOfService() {
 
-    const terms= document.getElementById("termsOfService").checked
+    const terms = document.getElementById("termsOfService").checked
     let validate = document.getElementById("validateTerms")
     //default error color
     validate.style = "color: red"
 
-    if(!terms){
-        validate.innerHTML= "You didn't checkbox the terms, please do so to submit"
-    }else{
+    if (!terms) {
+        validate.innerHTML = "You didn't checkbox the terms, please do so to submit"
+    } else {
         validate.style = "color: green"
-        validate.innerHTML= "You agreed to our terms of service"
+        validate.innerHTML = "You agreed to our terms of service"
         return true
     }
 
@@ -165,99 +174,99 @@ function TermsOfService() {
 
 //address validations
 
-function Address(){
+function Address() {
 
-    const address= document.getElementById("address").value.trim()
+    const address = document.getElementById("address").value.trim()
 
-    let validate= document.getElementById("validateAddress")
+    let validate = document.getElementById("validateAddress")
 
     //default error color
     validate.style = "color: red"
 
-    if(address === ""){
-        validate.innerHTML= "Your address can't be empty"
-    }else if(!validateBoth(address)){
-        validate.innerHTML= "Your address contains invalid characters"
-    }else if(!validateIfMix(address)){
-        validate.innerHTML= "Your address should be similiar to (e.g. 340 bayshore hwy)" 
-    }else if(address.length> 40){
-        validate.innerHTML= "Your address exceeded 40 characters"
-    }else{
-        validate.innerHTML= "Valid street name"
-        validate.style= "color: green"
-        surveyInfo.address= address
+    if (address === "") {
+        validate.innerHTML = "Your address can't be empty"
+    } else if (!validateBoth(address)) {
+        validate.innerHTML = "Your address contains invalid characters"
+    } else if (!validateIfMix(address)) {
+        validate.innerHTML = "Your address should be similiar to (e.g. 340 bayshore hwy)"
+    } else if (address.length > 40) {
+        validate.innerHTML = "Your address exceeded 40 characters"
+    } else {
+        validate.innerHTML = "Valid street name"
+        validate.style = "color: green"
+        surveyInfo.address = address
         return true
     }
     return false
 }
 
-function Cities(){
+function Cities() {
 
-    const city= document.getElementById("city").value.trim()
+    const city = document.getElementById("city").value.trim()
 
-    let validate= document.getElementById("validateCity")
+    let validate = document.getElementById("validateCity")
 
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllLetters(city)){
-        validate.innerHTML= "Your city contains non-letters"
-    }else if(city === ""){
-        validate.innerHTML= "Your city can't be empty"
-    }else if(city.length> 40){
-        validate.innerHTML= "Your city exceeded 40 characters"
-    }else{
-        validate.innerHTML= "Valid city"
-        validate.style= "color: green"
-        surveyInfo.city= city
+    if (!validateAllLetters(city)) {
+        validate.innerHTML = "Your city contains non-letters"
+    } else if (city === "") {
+        validate.innerHTML = "Your city can't be empty"
+    } else if (city.length > 40) {
+        validate.innerHTML = "Your city exceeded 40 characters"
+    } else {
+        validate.innerHTML = "Valid city"
+        validate.style = "color: green"
+        surveyInfo.city = city
         return true
     }
     return false
 }
 
-function States(){
+function States() {
 
-    const state= document.getElementById("state").value.trim()
+    const state = document.getElementById("state").value.trim()
 
-    let validate= document.getElementById("validateState")
+    let validate = document.getElementById("validateState")
 
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllLetters(state)){
-        validate.innerHTML= "Your state contains non-letters"
-    }else if(state === ""){
-        validate.innerHTML= "Your state can't be empty"
-    }else if(state.length> 40){
-        validate.innerHTML= "Your state exceeded 40 characters"
-    }else if(!validateStates(state)){
-        validate.innerHTML= "This state doesn't exist in U.S"
-    }else{
-        validate.innerHTML= "Valid state"
-        validate.style= "color: green"
-        surveyInfo.state= state
+    if (!validateAllLetters(state)) {
+        validate.innerHTML = "Your state contains non-letters"
+    } else if (state === "") {
+        validate.innerHTML = "Your state can't be empty"
+    } else if (state.length > 40) {
+        validate.innerHTML = "Your state exceeded 40 characters"
+    } else if (!validateStates(state)) {
+        validate.innerHTML = "This state doesn't exist in U.S"
+    } else {
+        validate.innerHTML = "Valid state"
+        validate.style = "color: green"
+        surveyInfo.state = state
         return true
     }
     return false
 }
 
-function Zips(){
+function Zips() {
 
-    const zip=  document.getElementById("zip").value
-    const zipLimit= 5
+    const zip = document.getElementById("zip").value
+    const zipLimit = 5
 
-    let validate= document.getElementById("validateZip")
+    let validate = document.getElementById("validateZip")
     //default error color
     validate.style = "color: red"
 
-    if(!validateAllNumbers(zip)){
-        validate.innerHTML= "Your zip contains non-numbers"
-    }else if(zip.length != zipLimit){
-        validate.innerHTML= `Your zip code isn't ${zipLimit} digits`
-    }else{
-        validate.innerHTML= "Valid zip code"
-        validate.style= "color: green"
-        surveyInfo.zip= zip
+    if (!validateAllNumbers(zip)) {
+        validate.innerHTML = "Your zip contains non-numbers"
+    } else if (zip.length != zipLimit) {
+        validate.innerHTML = `Your zip code isn't ${zipLimit} digits`
+    } else {
+        validate.innerHTML = "Valid zip code"
+        validate.style = "color: green"
+        surveyInfo.zip = zip
         return true
     }
     return false
