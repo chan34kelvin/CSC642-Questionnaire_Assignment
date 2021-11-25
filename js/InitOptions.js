@@ -18,7 +18,7 @@ function InitHeights(){
     document.getElementById("fts").appendChild(arr[0])
 
     //fts
-    for(let i=0; i< 12;i+=1){
+    for(let i=1; i< 12;i+=1){
         console.log("test1")
         arr[i] = document.createElement("option")
         arr[i].value= `${i}`
@@ -33,10 +33,10 @@ function InitHeights(){
 
     //inches
     for(let i=0; i< 12;i+=1){
-        arr1[i] = document.createElement("option")
-        arr1[i].value= `${i}`
-        arr1[i].appendChild(document.createTextNode(`${i}`))
-        document.getElementById("inches").appendChild(arr1[i])      
+        arr1[i+1] = document.createElement("option")
+        arr1[i+1].value= `${i}`
+        arr1[i+1].appendChild(document.createTextNode(`${i}`))
+        document.getElementById("inches").appendChild(arr1[i+1])      
     }
 }
 
