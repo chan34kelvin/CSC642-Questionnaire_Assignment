@@ -18,12 +18,12 @@ function InitHeights(){
     document.getElementById("fts").appendChild(arr[0])
 
     //fts
-    for(let i=1; i< 12;i+=1){
+    for(let i=0; i< 12;i+=1){
         console.log("test1")
-        arr[i] = document.createElement("option")
-        arr[i].value= `${i}`
-        arr[i].appendChild(document.createTextNode(`${i}`))
-        document.getElementById("fts").appendChild(arr[i])        
+        arr[i+1] = document.createElement("option")
+        arr[i+1].value= `${i}`
+        arr[i+1].appendChild(document.createTextNode(`${i}`))
+        document.getElementById("fts").appendChild(arr[i+1])        
     }
 
     arr1[0] = document.createElement("option")

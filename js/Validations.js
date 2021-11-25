@@ -60,6 +60,8 @@ function Heights() {
     }else if(fts === "" || inches === ""){
         validate.style= "color: grey"
         validate.innerHTML= "Enter your height"
+        surveyInfo.fts= fts + " ft."
+        surveyInfo.inches= inches + " in."
         return true
     }else{
         validate.innerHTML= "Valid height"
