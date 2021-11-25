@@ -59,6 +59,7 @@ function Heights() {
         validate.innerHTML= "Your height input isn't a number"
     }else if(fts === "" || inches === ""){
         validate.style= "color: grey"
+        validate.innerHTML= "Enter your height"
         return true
     }else{
         validate.innerHTML= "Valid height"
