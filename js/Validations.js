@@ -63,12 +63,12 @@ function Heights() {
 
         if (inches==="" && fts.length > 0) {
             surveyInfo.fts = fts + " ft."
-            surveyInfo.inches = " "
+            surveyInfo.inches = ""
         } else if (fts === "" && inches.length > 0) {
-            surveyInfo.fts = " "
+            surveyInfo.fts = ""
             surveyInfo.inches = inches + " in."
         } else {
-            surveyInfo.fts = fts
+            surveyInfo.fts = "None"
             surveyInfo.inches = inches
         }
         return true
