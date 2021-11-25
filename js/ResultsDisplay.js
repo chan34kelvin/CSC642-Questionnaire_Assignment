@@ -23,7 +23,7 @@ function initMap() {
             key: "AIzaSyD83drqxn_tmCcwf8NB1_vNwed9BRkU1VE"
         }
     }).then(function (response) {
-        console.log(response.data.results[0].geometry.location)
+
         const location = response.data.results[0].geometry.location
 
         const map = new google.maps.Map(document.getElementById("map"), {
