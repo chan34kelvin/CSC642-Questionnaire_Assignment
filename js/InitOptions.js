@@ -2,7 +2,43 @@
 
 InitSelects(titleOptions, "title")
 InitSelects(budgetOptions, "budget")
+InitHeights()
 InitDataLists(statesOptions, "states")
+
+function InitHeights(){
+
+    let arr= new Array()
+    let arr1= new Array()
+
+    console.log("test")
+
+    arr[0] = document.createElement("option")
+    arr[0].value= ""
+    arr[0].appendChild(document.createTextNode(""))
+    document.getElementById("fts").appendChild(arr[0])
+
+    //fts
+    for(let i=1; i< 12;i+=1){
+        console.log("test1")
+        arr[i] = document.createElement("option")
+        arr[i].value= `${i}`
+        arr[i].appendChild(document.createTextNode(`${i}`))
+        document.getElementById("fts").appendChild(arr[i])        
+    }
+
+    arr1[0] = document.createElement("option")
+    arr1[0].value= ""
+    arr1[0].appendChild(document.createTextNode(""))
+    document.getElementById("inches").appendChild(arr1[0])
+
+    //inches
+    for(let i=1; i< 12;i+=1){
+        arr1[i] = document.createElement("option")
+        arr1[i].value= `${i}`
+        arr1[i].appendChild(document.createTextNode(`${i}`))
+        document.getElementById("inches").appendChild(arr1[i])      
+    }
+}
 
 //makes dropdown options for select
 function InitSelects(options, id) {

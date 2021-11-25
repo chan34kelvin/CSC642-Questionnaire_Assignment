@@ -9,7 +9,7 @@
 <!-- custom css -->
 <link rel="stylesheet" href="./css/mainPage.css" />
 
-<title>Data survey form</title>
+<title>CSC 642 848 Fall 2021 Individual Assignment Kelvin Ching Kiu Chan Data survey form</title>
 
 <head>
 </head>
@@ -25,7 +25,7 @@
                 <div class="">
                     CSC 642 848 Fall 2021 Individual Assignment
                 </div>
-                <div class="">
+                <div class="fs-2">
                     By: Kelvin Ching Kiu Chan
                 </div>
                 <hr />
@@ -89,17 +89,19 @@
                                 </div>
                                 <div class="d-flex flex-row gap-3 ">
                                     <div class="d-flex flex-row gap-3 align-items-center">
-                                        <input type="text" class="form-control p-3 fs-5 text-center" maxlength="2"
+                                        <select class="form-select p-3 fs-5"
                                             style="background-color: #D3D3D3; width: 75px;" id="fts"
                                             onchange="Heights()">
+                                        </select>
                                         <div class="">
                                             ft.
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row gap-3 align-items-center">
-                                        <input type="text" class="form-control p-3 fs-5 text-center" maxlength="2"
+                                        <select class="form-select p-3 fs-5"
                                             style="background-color: #D3D3D3; width: 75px;" id="inches"
-                                            onchange="Heights()" values="">
+                                            onchange="Heights()">
+                                        </select>
                                         <div class="">
                                             in.
                                         </div>
@@ -136,7 +138,7 @@
                                 Address*
                             </div>
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
-                                   id="address" onchange="Address()">
+                                id="address" onchange="Address()">
                             <div class="blockquote-footer mt-1 " id="validateAddress">
                                 Enter your Address (e.g. 340 Bush Street)
                             </div>
@@ -226,7 +228,7 @@
                     <div class="d-flex flex-column flex-lg-row gap-4 align-items-stretch">
                         <div class="d-flex flex-column form-group w-100 gap-3">
                             <div class="text-start">
-                                Monthly budget for services
+                                Monthly budget for Services
                             </div>
                             <select class="form-select p-3 w-100 fs-5"
                                 style="max-width: 300px; background-color: #D3D3D3;" id="budget">
@@ -243,7 +245,7 @@
                             <input type="text" class="form-control p-3 fs-5" style="background-color: #D3D3D3;"
                                 id="emails" onchange="Emails()">
                             <div class="blockquote-footer mt-1 " id="validateEmail">
-                                Enter your email address for more promotions
+                                Enter your email here
                             </div>
                         </div>
                     </div>
@@ -279,8 +281,7 @@
                     <div class="blockquote-footer mt-1 " id="validateButton">
                         Please use the captcha before clicking submit
                     </div>
-                    <button type="submit" class="btn btn-primary p-3 fs-5" id="button"
-                        disabled>
+                    <button type="submit" class="btn btn-primary p-3 fs-5" id="button" disabled>
                         Submit
                     </button>
                 </div>

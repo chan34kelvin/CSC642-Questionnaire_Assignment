@@ -6,13 +6,6 @@ $(document).ready(function ($) {
     $("#phone").mask("AAA AAA AAAA");
 });
 
-$(document).ready(function ($) {
-    $("#fts").mask("#");
-});
-
-$(document).ready(function ($) {
-    $("#inches").mask("#");
-});
 
 
 

@@ -18,7 +18,6 @@ var surveyInfo= {
     email: ""
 }
 
-
 const titleOptions = [
     "None",
     "Staff",
