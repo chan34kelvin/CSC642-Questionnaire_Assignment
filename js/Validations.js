@@ -61,10 +61,10 @@ function Heights() {
         validate.style = "color: grey"
         validate.innerHTML = "Enter your height"
 
-        if (fts.length > 1) {
+        if (fts.length > 0) {
             surveyInfo.fts = fts + " ft."
             surveyInfo.inches ="0 in."
-        } else if (inches.length > 1) {
+        } else if (inches.length > 0) {
             surveyInfo.fts = "0 ft."
             surveyInfo.inches = inches + " in."
         } else {
