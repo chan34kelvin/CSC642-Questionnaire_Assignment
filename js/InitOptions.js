@@ -10,8 +10,6 @@ function InitHeights(){
     let arr= new Array()
     let arr1= new Array()
 
-    console.log("test")
-
     arr[0] = document.createElement("option")
     arr[0].value= ""
     arr[0].appendChild(document.createTextNode(""))
@@ -19,7 +17,6 @@ function InitHeights(){
 
     //fts
     for(let i=0; i< 12;i+=1){
-        console.log("test1")
         arr[i+1] = document.createElement("option")
         arr[i+1].value= `${i}`
         arr[i+1].appendChild(document.createTextNode(`${i}`))
