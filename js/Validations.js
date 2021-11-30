@@ -91,6 +91,10 @@ function Phones() {
     //default error color
     validate.style = "color: red"
 
+    if(phone.length === 0){
+        surveyInfo.phone = phone
+        return true
+    }
     if (!validateAllNumbers(phone)) {
         validate.innerHTML = "Your phone contains non-numbers"
     } else if (phone.length != phoneLimit) {
