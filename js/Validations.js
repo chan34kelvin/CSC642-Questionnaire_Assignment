@@ -92,6 +92,8 @@ function Phones() {
     validate.style = "color: red"
 
     if(phone.length === 0){
+        validate.innerHTML= "Enter your phone number"
+        validate.style = "color: grey"
         surveyInfo.phone = phone
         return true
     }
