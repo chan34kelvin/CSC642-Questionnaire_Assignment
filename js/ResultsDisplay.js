@@ -13,6 +13,9 @@ function DisplayResults(){
 }
 
 //this code is obtained from google api
+//https://www.youtube.com/watch?v=29Dp2mSwS4w for learning how to use axios
+//https://developers.google.com/maps/documentation/javascript/adding-a-google-map for the marker and init map
+//https://developer.mapquest.com/documentation/open/geocoding-api/ how to use geocode here
 function initMap() {
 
     const address= document.getElementById("address").innerHTML + " " + document.getElementById("city").innerHTML+ " " + document.getElementById("state").innerHTML + " " +document.getElementById("zip").innerHTML
