@@ -84,3 +84,5 @@ const statesOptions = [
     "Idaho",
     "Illinois"
 ]
+
+document.getElementById("captcha").setAttribute('data-sitekey',process.env.SITE_KEY)

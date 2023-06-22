@@ -23,7 +23,7 @@ function initMap() {
     axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
         params: {
             address: address,
-            key: "AIzaSyD83drqxn_tmCcwf8NB1_vNwed9BRkU1VE"
+            key: process.env.GOOGLE_MAP_API_KEY
         }
     }).then(function (response) {
 
