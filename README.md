@@ -6,7 +6,7 @@ This questionnaire helps collect user data and provides a summary after submissi
 
 It incorporates RE-captcha for enhanced security and Geocode with Map marker to display the inputted location.
 
-Updates:
+**Updates:**
 Geomarker not working because it expired. But the code for it is still inside the result.html and js/ResultsDisplay files.
 
 ## This Form Includes:
