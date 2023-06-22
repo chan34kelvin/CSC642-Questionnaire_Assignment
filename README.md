@@ -9,20 +9,20 @@ It incorporates RE-captcha for enhanced security and Geocode with Map marker to 
 **Updates:**
 Geomarker not working because it expired. But the code for it is still inside the result.html and js/ResultsDisplay files.
 
-## This Form Includes:
+## This Form Includes :
 
 - Questionnaire page
 - Result Verfication page
 
-## Tools Used:
+## Tools Used :
 
 This form is created using HTML, bootstrap CSS, Axios, Geocode, Map marker, and RE-captcha.
 
-## Data Encryption
+## Data Encryption :
 
 Used Github Secret To Encrypt the KEYs.
 
-# References:
+# References
 
 RE-captcha:
 https://developers.google.com/recaptcha/docs/display
