@@ -1,8 +1,10 @@
-# CSC642-848-Fall-2021-Individual_Assignment Data-Survey-Form
+# Data-Survey-Form CSC642-848-Fall-2021-Individual_Assignment
 
 Checkout the form here at https://kelvinchingkiuchan.github.io/CSC642-848-Fall-2021-Individual_Assignment/
 
-This questionnaire helps collect user data and provides a summary after submission for reassurance purposes. It features on-change error detection for user inputs and provides relevant selections for specific fields, such as date fields and state fields. The form includes pre-populated values for easier selection in date fields and state fields. Additionally, it incorporates RE-captcha for enhanced security and Geocode with Map marker to display the inputted location.
+This questionnaire helps collect user data and provides a summary after submission for reassurance purposes. It features on-change error detection for user inputs and provides relevant selections for specific fields, such as date fields and state fields. The form includes pre-populated values for easier selection in date fields and state fields. 
+
+It incorporates RE-captcha for enhanced security and Geocode with Map marker to display the inputted location.
 
 ## This Form Includes:
 
