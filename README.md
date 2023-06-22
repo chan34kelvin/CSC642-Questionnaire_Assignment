@@ -18,6 +18,10 @@ Geomarker not working because it expired. But the code for it is still inside th
 
 This form is created using HTML, bootstrap CSS, Axios, Geocode, Map marker, and RE-captcha.
 
+## Data Encryption
+
+Used Github Secret To Encrypt the KEYs.
+
 # References:
 
 RE-captcha:

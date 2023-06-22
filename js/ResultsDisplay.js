@@ -38,5 +38,8 @@ function initMap() {
             position: location,
             map: map,
         });
+    }).catch(function (error) {
+        console.log(error);
+        document.getElementById("map").innerHTML = "Map Error Due to Key Expired."
     })
 }
